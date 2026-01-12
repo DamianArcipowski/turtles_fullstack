@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projekt 1">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript">
+    <meta name="author" content="Damian Arcipowski">
+    <title>Hodowla żółwia błotnego</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/gallery.js" defer></script>
+    <script src="https://kit.fontawesome.com/958b0131c3.js" crossorigin="anonymous"></script>
+    <script src="js/hamburger.js" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+        <a href="index.html">Strona główna</a>
+        <a href="species.html">O gatunku</a>
+        <a href="distribution.html">Występowanie</a>
+        <a href="gallery.html">Galeria</a>
+        <a href="contact.html">Kontakt</a>
+    </nav>
+    <div class="mobile-nav">
+        <div class="active-page"></div>
+        <div id="mobile-links">
+            <a href="index.html">Strona główna</a>
+            <a href="species.html">O gatunku</a>
+            <a href="distribution.html">Występowanie</a>
+            <a href="gallery.html">Galeria</a>
+            <a href="contact.html">Kontakt</a>
+        </div>
+        <a class="hamburger"><i class="fa fa-bars"></i></a>
+    </div>
+    <main>
+        <section class="gallery-intro">
+            <h1>Witaj w naszej galerii żółwi!</h1>
+            <p>Odkryj nasze niesamowite żółwie! Kliknij na dowolny obrazek poniżej by otworzyć pełną galerię zdjęć.</p>
+        </section>
+        <div class="gallery">
+            <img class="gallery-item" src="images/gallery1.webp" alt="gallery1">
+            <img class="gallery-item" src="images/gallery2.webp" alt="gallery2">
+            <img class="gallery-item" src="images/gallery3.webp" alt="gallery3">
+        </div>
+        <div class="gallery-viewer-wrapper">
+            <div class="mobile-gallery">
+                <button id="next-image-mobile"><i class="fa-solid fa-arrow-left-long"></i> Poprzednie </button>
+                <button id="previous-image-mobile">Następne <i class="fa-solid fa-arrow-right-long"></i></button>
+                <button id="close-image-mobile">Zamknij <i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="gallery-close"><i class="fa-solid fa-xmark"></i></div>
+            <div class="gallery-previous"><i class="fa-solid fa-arrow-left-long"></i></div>
+            <div class="gallery-viewer">
+                <img class="hidden-image" src="images/gallery1.webp" alt="gallery1">
+                <img class="hidden-image" src="images/gallery2.webp" alt="gallery2">
+                <img class="hidden-image" src="images/gallery3.webp" alt="gallery3">
+                <img class="hidden-image" src="images/gallery4.webp" alt="gallery4">
+                <img class="hidden-image" src="images/gallery5.webp" alt="gallery5">
+                <img class="hidden-image" src="images/gallery6.webp" alt="gallery6">
+                <img class="hidden-image" src="images/gallery7.webp" alt="gallery7">
+            </div>
+            <div class="gallery-next"><i class="fa-solid fa-arrow-right-long"></i></div>
+        </div>
+    </main>
+    <footer>
+       2025 Damian Arcipowski | All rights reserved &copy;
+    </footer>
+</body>
+</html>

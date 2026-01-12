@@ -1,0 +1,476 @@
+:root {
+    --mainbg: #F8F9FA;
+    --spanbg: #E6E8EA;
+    --text: #333333;
+    --headers: #000000;
+    --borders: #B0B0B0;
+    --accent: #6B8E23;
+    --dark-accent: #475A27;
+}
+
+body {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: var(--mainbg);
+    font-family: 'Lato', sans-serif;
+}
+
+main {
+    width: 80%;
+    margin: 1rem auto;
+    padding: 1rem;
+    flex: 1;
+}
+
+main > img {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+nav {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    position: relative;
+    margin: 1rem auto;
+    background-color: var(--spanbg);
+    padding: .5em;
+    border: 1px solid black;
+    border-radius: 2rem;
+}
+
+nav > a > img {
+    display: block;
+    width: 100%;
+    max-width: 5rem;
+    height: auto;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--text);
+    color: var(--mainbg);
+    text-align: center;
+    padding: 5px;
+}
+
+::-webkit-scrollbar { 
+    border: var(--spanbg);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--spanbg);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 10px;
+}
+
+a:visited, a:link {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--dark-accent);
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.contact-section {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: var(--mainbg);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contact-section h2 {
+  text-align: center;
+  color: var(--headers);
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 500;
+  color: var(--text);
+}
+
+input, textarea, select {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid var(--borders);
+  border-radius: 8px;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+  outline: none;
+}
+
+select {
+    background-color: #FFF;
+    outline: none;
+}
+
+button {
+  background-color: var(--accent);
+  color: var(--mainbg);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.gallery-intro {
+    color: var(--text);
+    text-align: center;
+}
+
+.gallery-intro h1 {
+    color: var(--dark-accent);
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--spanbg);
+    border-radius: 2em;
+}
+
+.gallery-item {
+    cursor: pointer;
+    max-width: 25em;
+    margin: 1em;
+    box-shadow: 10px 5px 5px var(--headers);
+}
+
+.gallery-viewer-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 10;
+    background-color: rgba(230, 230, 230, .6);
+}
+
+.gallery-next, .gallery-previous, .gallery-close {
+    background-color: var(--dark-accent);
+    border-radius: 2em;
+    width: 5em;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+    cursor: pointer;
+}
+
+.gallery-next i, .gallery-previous i, .gallery-close i {
+    color: var(--spanbg);
+    font-size: 4em;
+}
+
+.hidden-image {
+    display: none;
+}
+
+.visible-image {
+    width: 100%;;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.gallery-viewer {
+    width: 45em;
+    height: 30em;
+    border: 2px solid var(--dark-accent);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px  var(--text);
+}
+
+.gallery-close {
+    position: absolute;
+    top: 2em;
+    right: 2em; 
+}
+
+.no-body-scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
+form > button:hover {
+  background-color: var(--dark-accent);
+}
+
+.form-error {
+    color: #B80F0A;
+    display: none;
+}
+
+.fa-regular.fa-star {
+    color: #FFD700;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+    color: var(--accent);
+}
+
+.turtle-facts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--spanbg);
+    border-radius: 1em 1em 0 0;
+    color: var(--text);
+}
+
+.turtle-movie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--headers);
+    padding-bottom: 2em;
+    border-radius: 0 0 1em 1em;
+}
+
+.turtle-facts li {
+    text-align: left;
+}
+
+.turtle-facts p, .about-species p {
+    text-align: center;
+    width: 50%;
+}
+
+.turtle-reviews {
+    text-align: center;
+    color: var(--text);
+}
+
+.turtle-range {
+    color: var(--text);
+    border-radius: 1em;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.turtle-range img {
+    width: 60%;
+}
+
+.turtle-range p {
+    width: 75%;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.mobile-nav {
+    overflow: hidden;
+    background-color: var(--headers);
+    position: relative;
+    display: none;
+}
+
+#mobile-links, .mobile-gallery {
+    display: none;
+}
+
+.mobile-nav a {
+    color: var(--mainbg);
+    padding: .5em .8em;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block;
+}
+
+.mobile-nav .hamburger {
+    background: var(--headers);
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.mobile-nav a:hover {
+  background-color: var(--mainbg);
+  color: var(--headers);
+}
+
+.active-page {
+  background-color: var(--dark-accent);
+  color: var(--mainbg);
+  height: 2.6em;
+  font-size: 1em;
+  text-decoration: none;
+  display: block;
+}
+
+.timer {
+    background-color: var(--accent);
+    text-align: center;
+    color: var(--mainbg);
+    font-weight: 600;
+    font-size: 2.5em;
+    width: 60%;
+    margin: 0 auto 1em auto;
+    padding: .5em;
+    border-radius: 1em;
+}
+
+.about-species {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--spanbg);
+    border-radius: 1em;
+}
+
+.about-species span {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+table {
+  width: 60%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+  background: #FDFDFD;
+  border-radius: .5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+table thead th {
+  color: var(--mainbg);
+  padding: 1em;
+  text-align: left;
+  font-weight: bold;
+}
+
+table td {
+  padding: .8em 1em;
+  border-bottom: 1px solid #E4E4E4;
+}
+
+table tbody tr:nth-child(even) {
+  background: #F5FAF5;
+}
+
+table tbody tr:hover {
+  background: #E8F3E8;
+  transition: 0.2s;
+}
+
+iframe {
+    border: none;
+}
+
+@media (max-width: 768px) {
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .contact-section {
+        margin: 1.5em;
+        padding: 1.5em;
+    }
+
+    .turtle-facts p, .about-species p, ul {
+        width: 90%;
+    }
+
+    iframe {
+        width: 100%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    .contact-section {
+        margin: 1.5em 0;
+    }
+
+    .mobile-gallery {
+        display: block;
+        margin-bottom: 1em;
+    }
+
+    .gallery {
+        background-color: var(--mainbg);
+    }
+
+    .gallery-viewer-wrapper {
+        flex-direction: column;
+    }
+
+    .gallery-previous, .gallery-close, .gallery-next {
+        display: none;
+    }
+
+    .gallery-viewer {
+        width: 90%;
+        height: 25em;
+    }
+
+    table {
+        width: 90%;
+    }
+
+    table td {
+        padding: .5em;
+    }
+    
+    .timer {
+        font-size: 1.3em;
+    }
+}
