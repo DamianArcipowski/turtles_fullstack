@@ -46,7 +46,7 @@
                 'distribution' => 'subpages/distribution.php',
                 'gallery' => 'subpages/gallery.php',
                 'contact' => 'subpages/contact.php',
-                'login' => 'subpages/login.php'
+                'login' => 'subpages/authentication.php'
             ];
 
             $page = $_GET['page'] ?? 'welcome';
@@ -56,7 +56,7 @@
         ?>
     </main>
     <footer>
-       2025 Damian Arcipowski | All rights reserved &copy;
+       2026 Damian Arcipowski | All rights reserved &copy;
     </footer>
 </body>
 </html>

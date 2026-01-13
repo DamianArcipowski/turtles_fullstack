@@ -88,7 +88,7 @@ a:hover {
     transition: color 0.2s ease-in-out;
 }
 
-.contact-section, #registration-form {
+.contact-section, #authentication-form, #registration-form {
   max-width: 600px;
   margin: 3rem auto;
   padding: 2rem;
@@ -234,7 +234,7 @@ form > button:hover {
   background-color: var(--dark-accent);
 }
 
-.form-error {
+.form-error, .register-error {
     color: #B80F0A;
     display: none;
 }
@@ -350,7 +350,7 @@ h1, h2, h3, h4 {
     text-align: center;
     color: var(--mainbg);
     font-weight: 600;
-    font-size: 2.5em;
+    font-size: 2em;
     width: 60%;
     margin: 0 auto 1em auto;
     padding: .5em;
@@ -412,13 +412,14 @@ iframe {
     margin: 0;
 }
 
-.register-window {
+.authentication-window {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-.register-window p {
+.authentication-window p {
     text-align: center;
     margin: 0;
 }
@@ -427,8 +428,17 @@ hr {
     width: 100%;
 }
 
-#registration-form {
+#authentication-form, #registration-form {
     width: 600px;
+}
+
+#registration-form {
+    display: none;
+}
+
+.register-success {
+    display: none;
+    color: #0ab80a;
 }
 
 @media (max-width: 768px) {
