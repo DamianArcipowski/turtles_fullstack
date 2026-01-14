@@ -21,25 +21,8 @@
             <th>Cecha</th>
             <th>Opis</th>
         </tr>
-        <tr>
-            <td>Nazwa łacińska</td>
-            <td>Emys orbicularis</td>
-        </tr>
-        <tr>
-            <td>Rozmiar</td>
-            <td>12-20 cm</td>
-        </tr>
-        <tr>
-            <td>Waga</td>
-            <td>0,5-1 kg</td>
-        </tr>
-        <tr>
-            <td>Dieta</td>
-            <td>owady, małe ryby, rośliny wodne</td>
-        </tr>
-        <tr>
-            <td>Siedlisko</td>
-            <td>stawy, jeziora, rzeki z roślinnością</td>
-        </tr>
+        <?php
+        require_once '../turtles_fullstack/backend_logic/traits.php';
+        ?>
     </table>
 </div>

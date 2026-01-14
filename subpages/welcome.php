@@ -65,5 +65,25 @@
         echo '<h4>Witaj po raz pierwszy na naszej stronie!</h4>';
     }
 
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $json = file_get_contents("http://ip-api.com/json/$ip");
+    $data = json_decode($json, true);
+
+    $city = $data['city'] ?? 'N/A';
+    $country = $data['country'] ?? 'N/A';
+
+    $data = [
+        'ip' => $ip,
+        'city' => $city,
+        'country' => $country
+    ];
+
+    $file = 'config/location.json';
+    $json = json_encode($data, JSON_PRETTY_PRINT);
+    file_put_contents($file, $json);
+
+    echo '<h4>Twoje dane geolokalizacyjne:</h4>';
+    echo '<p>' . $ip . ' | ' . $city . ' | ' . $country . '</p>';
+
     ?>
 </section>
