@@ -234,7 +234,7 @@ form > button:hover {
   background-color: var(--dark-accent);
 }
 
-.form-error, .register-error {
+.form-error, .register-error, .login-exist-error, .login-password-error {
     color: #B80F0A;
     display: none;
 }

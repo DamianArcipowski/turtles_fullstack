@@ -1,4 +1,5 @@
 <script src="js/auth.js" defer></script>
+
 <div class="authentication-window">
     <h3>Formularz logowania</h3>
     <form id="authentication-form" action="subpages/login.php" method="POST">
@@ -12,6 +13,8 @@
         <p>Nie masz konta?</p>
         <button type="button" id="register">Zarejestruj się</button>
         <p class="register-success">Konto utworzone pomyślnie! Użyj powyższego formularza aby się zalogować.</p>
+        <p class="login-exist-error">Użytkownik nie istnieje w bazie danych!</p>
+        <p class="login-password-error">Nazwa użytkownika bądź hasło są niepoprawne!</p>
     </form>
     <form id="registration-form" action="subpages/register.php" method="POST">
         <label for="register-email">Adres e-mail:</label>
