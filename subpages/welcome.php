@@ -46,11 +46,24 @@
 </section>
 <section class="last-visit">
     <?php
-        if (isset($_COOKIE['visit'])) {
-            echo '<h4>Data twoich ostatnich odwiedzin strony:</h4>';
-            echo '<p>' . $_COOKIE['visit'] . '</p>';
-        } else {
-            echo '<h4>Witaj po raz pierwszy na naszej stronie!</h4>';
-        }
+
+    session_start();
+    
+    if (isset($_SESSION['visit_counter'])) {
+        $_SESSION['visit_counter']++;
+    } else {
+        $_SESSION['visit_counter'] = 1;
+    }
+
+    echo '<h4>Liczba Twoich odwiedzin strony:</h4>';
+    echo '<p>' . $_SESSION['visit_counter'] . '</p>';
+
+    if (isset($_COOKIE['visit'])) {
+        echo '<h4>Data Twoich ostatnich odwiedzin strony:</h4>';
+        echo '<p>' . $_COOKIE['visit'] . '</p>';
+    } else {
+        echo '<h4>Witaj po raz pierwszy na naszej stronie!</h4>';
+    }
+
     ?>
 </section>

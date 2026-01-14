@@ -1,6 +1,6 @@
 <?php
     $lifetime = time() + 30 * 24 * 60 * 60;
-    setcookie('visit', date('Y-m-d H:i:s'), $lifetime);
+    setcookie('visit', date('Y-m-d H:i:s (P)'), $lifetime);
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -40,19 +40,21 @@
     </div>
     <main>
         <?php
-            $subpages = [
-                'welcome' => 'subpages/welcome.php',
-                'species' => 'subpages/species.php',
-                'distribution' => 'subpages/distribution.php',
-                'gallery' => 'subpages/gallery.php',
-                'contact' => 'subpages/contact.php',
-                'login' => 'subpages/authentication.php'
-            ];
 
-            $page = $_GET['page'] ?? 'welcome';
-            $file = $subpages[$page] ?? null;
+        $subpages = [
+            'welcome' => 'subpages/welcome.php',
+            'species' => 'subpages/species.php',
+            'distribution' => 'subpages/distribution.php',
+            'gallery' => 'subpages/gallery.php',
+            'contact' => 'subpages/contact.php',
+            'login' => 'subpages/authentication.php'
+        ];
 
-            $file && file_exists($file) ? include($file) : http_response_code(404);
+        $page = $_GET['page'] ?? 'welcome';
+        $file = $subpages[$page] ?? null;
+
+        $file && file_exists($file) ? include($file) : http_response_code(404);
+        
         ?>
     </main>
     <footer>
