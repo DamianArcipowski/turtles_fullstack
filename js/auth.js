@@ -2,7 +2,7 @@ const registerBtn = document.getElementById('register');
 const loginBtn = document.getElementById('login');
 const registerForm = document.getElementById('registration-form');
 const authenticateForm = document.getElementById('authentication-form');
-const h3 = document.getElementsByTagName('h3')[0];
+const h2 = document.getElementsByTagName('h2')[0];
 const registerErrorField = document.querySelector('.register-error');
 const successField = document.querySelector('.register-success');
 const userErrorField = document.querySelector('.login-exist-error');
@@ -11,13 +11,13 @@ const passwordErrorField = document.querySelector('.login-password-error');
 registerBtn.addEventListener('click', () => {
     registerForm.style.display = 'flex';
     authenticateForm.style.display = 'none';
-    h3.textContent = 'Formularz rejestracji';
+    h2.textContent = 'Formularz rejestracji';
 });
 
 loginBtn.addEventListener('click', () => {
     registerForm.style.display = 'none';
     authenticateForm.style.display = 'flex';
-    h3.textContent = 'Formularz logowania';
+    h2.textContent = 'Formularz logowania';
 });
 
 function checkRegistrationFormStatus() {

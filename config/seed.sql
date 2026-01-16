@@ -29,6 +29,24 @@ CREATE TABLE IF NOT EXISTS employees (
     flat_num varchar(5)
 );
 
+CREATE TABLE IF NOT EXISTS discount_codes (
+	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    code varchar(20) NOT NULL
+); 
+
+CREATE TABLE IF NOT EXISTS organisation (
+	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    info varchar(255) NOT NULL
+);
+
+INSERT INTO organisation (info) VALUES ('Uniwersytet Warmińsko-Mazurski w Olsztynie');
+INSERT INTO organisation (info) VALUES ('Michała Oczapowskiego 2, Olsztyn');
+INSERT INTO organisation (info) VALUES ('Telefon: 89 523 49 13');
+
+INSERT INTO discount_codes (code) VALUES ('ZIMA15');
+INSERT INTO discount_codes (code) VALUES ('WYPRZEDAZ10');
+INSERT INTO discount_codes (code) VALUES ('ZOLWIE7');
+
 INSERT INTO traits (trait, description) VALUES ('Nazwa łacińska', 'Emys orbicularis');
 INSERT INTO traits (trait, description) VALUES ('Rozmiar', '12-20 cm');
 INSERT INTO traits (trait, description) VALUES ('Waga', '0,5-1 kg');
