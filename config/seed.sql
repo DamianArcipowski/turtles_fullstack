@@ -16,6 +16,19 @@ CREATE TABLE IF NOT EXISTS traits (
     description varchar(255) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS employees (
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name varchar(50) NOT NULL,
+    surname varchar(50) NOT NULL,
+    sex enum('K', 'M') NOT NULL,
+    birth_date date NOT NULL,
+    country varchar(50) NOT NULL,
+    city varchar(50) NOT NULL,
+    street varchar(50) NOT NULL,
+    home_num varchar(5) NOT NULL,
+    flat_num varchar(5)
+);
+
 INSERT INTO traits (trait, description) VALUES ('Nazwa łacińska', 'Emys orbicularis');
 INSERT INTO traits (trait, description) VALUES ('Rozmiar', '12-20 cm');
 INSERT INTO traits (trait, description) VALUES ('Waga', '0,5-1 kg');

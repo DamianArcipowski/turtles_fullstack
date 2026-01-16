@@ -31,7 +31,7 @@ if (!($_SESSION['signed_in'] == true && $_SESSION['admin'] == true)) {
         <p class="crud-success"></p>
         <p class="crud-error"></p>
         <h2>Dodaj użytkownika</h2>
-        <form action="../backend_logic/users_crud.php" method="POST" class="create-user">
+        <form action="../backend_logic/users_crud.php" method="POST" class="create-form">
             <label for="email">Email:</label>
             <input type="email" name="email" required>
             <label for="password">Hasło:</label>
@@ -60,6 +60,51 @@ if (!($_SESSION['signed_in'] == true && $_SESSION['admin'] == true)) {
             </tr>
             <?php
             require_once('../backend_logic/users_list.php');
+            ?>
+        </table>
+        <hr class="gradient-hr">
+        <h2>Dodaj pracownika</h2>
+        <form action="../backend_logic/employee_create.php" method="POST" class="create-form">
+            <label for="name">Imię:</label>
+            <input type="text" name="name" required>
+            <label for="surname">Nazwisko:</label>
+            <input type="text" name="surname" required>
+            <label for="sex">Płeć:</label>
+            <select name="sex">
+                <option value="K">Kobieta</option>
+                <option value="M">Mężczyzna</option>
+            </select>
+            <label for="birth_date">Data urodzenia:</label>
+            <input type="date" name="birth_date" required>
+            <label for="country">Kraj:</label>
+            <input type="text" name="country" required>
+            <label for="city">Miasto:</label>
+            <input type="text" name="city" required>
+            <label for="street">Ulica:</label>
+            <input type="text" name="street" required>
+            <label for="home_num">Numer domu:</label>
+            <input type="text" name="home_num" required>
+            <label for="flat_num">Numer mieszkania:</label>
+            <input type="text" name="flat_num">
+            <button type="submit" name="create-employee">Dodaj pracownika</button>
+            <button type="reset">Wyczyść</button>
+        </form>
+        <hr class="gradient-hr">
+        <h2>Lista pracowników</h2>
+        <table id="employees-table">
+            <tr>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Płeć</th>
+                <th>Data urodzenia</th>
+                <th>Kraj</th>
+                <th>Miasto</th>
+                <th>Ulica</th>
+                <th>Numer domu</th>
+                <th>Numer mieszkania</th>
+            </tr>
+            <?php
+            require_once('../backend_logic/employees_list.php');
             ?>
         </table>
     </main>

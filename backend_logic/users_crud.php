@@ -2,6 +2,8 @@
 
 require_once '../config/database.php';
 
+$result = $conn->query('SELECT * FROM users');
+
 if (isset($_POST['create'])) {
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -31,7 +33,7 @@ if (isset($_POST['update'])) {
 
     try {
         $stmt = $conn->prepare('UPDATE users SET password = ?, role = ?, is_active = ? WHERE id = ?');
-        $stmt->bind_param('ssii', $password, $role, $is_active, $id);
+        $stmt->bind_param('ssii', $password, $role, $active, $id);
         $stmt->execute();
         $stmt->close();
         $conn->close();

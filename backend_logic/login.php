@@ -5,7 +5,7 @@ $password = $_POST['login-password'];
 
 require_once '../config/database.php';
 
-$sql = 'SELECT password, is_active FROM users WHERE email = ?';
+$sql = 'SELECT password, is_active, role FROM users WHERE email = ?';
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s', $email);
 $stmt->execute();
@@ -21,7 +21,14 @@ $row = $result->fetch_assoc();
 if (password_verify($password, $row['password']) && $row['is_active'] == 1) {
     session_start();
     $_SESSION['signed_in'] = true;
-    header('Location: restricted.php');
+
+    if ($row['role'] == 'admin') {
+        $_SESSION['admin'] = true;
+        header('Location: ../subpages/panel.php');
+        exit();
+    }
+    
+    header('Location: ../subpages/restricted.php');
 } else {
     header('Location: ../index.php?page=login&password_match=false');
 }

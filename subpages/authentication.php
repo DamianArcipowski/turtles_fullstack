@@ -1,8 +1,8 @@
 <script src="js/auth.js" defer></script>
 
 <div class="authentication-window">
-    <h3>Formularz logowania</h3>
-    <form id="authentication-form" action="subpages/login.php" method="POST">
+    <h2>Formularz logowania</h2>
+    <form id="authentication-form" action="backend_logic/login.php" method="POST">
         <label for="login-email">Adres e-mail:</label>
         <input type="email" name="login-email" placeholder="Twój adres e-mail..." required>
         <label for="login-password">Hasło:</label>
@@ -16,7 +16,7 @@
         <p class="login-exist-error">Użytkownik nie istnieje w bazie danych!</p>
         <p class="login-password-error">Nazwa użytkownika bądź hasło są niepoprawne!</p>
     </form>
-    <form id="registration-form" action="subpages/register.php" method="POST">
+    <form id="registration-form" action="backend_logic/register.php" method="POST">
         <label for="register-email">Adres e-mail:</label>
         <input type="email" name="register-email" placeholder="Adres e-mail..." required>
         <label for="register-password">Hasło:</label>

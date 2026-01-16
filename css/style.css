@@ -77,7 +77,7 @@ footer {
     border-radius: 10px;
 }
 
-a:visited, a:link {
+a:visited, a:link, a {
     color: var(--accent);
     text-decoration: none;
 }
@@ -441,7 +441,7 @@ hr {
     color: #0ab80a;
 }
 
-.create-user {
+.create-form {
     margin: 0 auto;
     width: 50%;
 }
@@ -483,11 +483,11 @@ hr {
     font-weight: bold;
 }
 
-#users-table {
+#users-table, #employees-table {
     margin: 0 auto;
 }
 
-#users-table td {
+#users-table td, #employees-table td {
     text-align: center;
 }
 
