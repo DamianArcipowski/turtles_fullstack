@@ -536,6 +536,32 @@ hr {
     margin: 0 auto;
 }
 
+@media (max-width: 1024px) {
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .restricted-list li, #organisation {
+        width: auto;
+    }
+
+    #user-logout, #admin-logout {
+        width: 20%;
+        margin: 0 90%;
+    }
+
+    nav {
+        width: 90%;
+    }
+
+    #users-table, #employees-table {
+        width: 90%;
+    }
+}
+
 @media (max-width: 768px) {
     html, body {
         margin: 0;
@@ -601,5 +627,28 @@ hr {
     
     .timer {
         font-size: 1.3em;
+    }
+
+    #authentication-form, #registration-form {
+        max-width: 350px;
+        margin: 0;
+    }
+
+    #organisation, .create-form {
+        width: auto;
+    }
+
+    .restricted-list li {
+        width: auto;
+        translate: -20px;
+    }
+
+    #admin-logout, #user-logout {
+        width: 30%;
+        margin: 0 80%;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
     }
 }

@@ -50,18 +50,20 @@ if (!($_SESSION['signed_in'] == true && $_SESSION['admin'] == true)) {
         </form>
         <hr class="gradient-hr">
         <h2>Lista użytkowników</h2>
-        <table id="users-table">
-            <tr>
-                <th>Id</th>
-                <th>E-mail</th>
-                <th>Rola</th>
-                <th>Aktywny</th>
-                <th>Operacje</th>
-            </tr>
-            <?php
-            require_once('../backend_logic/users_list.php');
-            ?>
-        </table>
+        <div class="table-wrapper">
+            <table id="users-table">
+                <tr>
+                    <th>Id</th>
+                    <th>E-mail</th>
+                    <th>Rola</th>
+                    <th>Aktywny</th>
+                    <th>Operacje</th>
+                </tr>
+                <?php
+                require_once('../backend_logic/users_list.php');
+                ?>
+            </table>
+        </div>
         <hr class="gradient-hr">
         <h2>Dodaj pracownika</h2>
         <form action="../backend_logic/employee_create.php" method="POST" class="create-form">
@@ -91,22 +93,24 @@ if (!($_SESSION['signed_in'] == true && $_SESSION['admin'] == true)) {
         </form>
         <hr class="gradient-hr">
         <h2>Lista pracowników</h2>
-        <table id="employees-table">
-            <tr>
-                <th>Imię</th>
-                <th>Nazwisko</th>
-                <th>Płeć</th>
-                <th>Data urodzenia</th>
-                <th>Kraj</th>
-                <th>Miasto</th>
-                <th>Ulica</th>
-                <th>Numer domu</th>
-                <th>Numer mieszkania</th>
-            </tr>
-            <?php
-            require_once('../backend_logic/employees_list.php');
-            ?>
-        </table>
+        <div class="table-wrapper">
+            <table id="employees-table">
+                <tr>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                    <th>Płeć</th>
+                    <th>Data urodzenia</th>
+                    <th>Kraj</th>
+                    <th>Miasto</th>
+                    <th>Ulica</th>
+                    <th>Numer domu</th>
+                    <th>Numer mieszkania</th>
+                </tr>
+                <?php
+                require_once('../backend_logic/employees_list.php');
+                ?>
+            </table>
+        </div>
     </main>
     <div id="modal-update" class="modal-wrapper">
         <div class="modal">
