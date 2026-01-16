@@ -49,7 +49,7 @@ if (!($_SESSION['signed_in'] == true && $_SESSION['admin'] == true)) {
             <button type="submit" name="create">Dodaj użytkownika</button>
         </form>
         <hr class="gradient-hr">
-        <h2>Lista użytkowników</h3>
+        <h2>Lista użytkowników</h2>
         <table id="users-table">
             <tr>
                 <th>Id</th>
@@ -63,12 +63,12 @@ if (!($_SESSION['signed_in'] == true && $_SESSION['admin'] == true)) {
             ?>
         </table>
     </main>
-    <div class="modal-wrapper">
+    <div id="modal-update" class="modal-wrapper">
         <div class="modal">
             <form action="../backend_logic/users_crud.php" method="POST" class="update-user">
-                <input type="hidden" name="id">
+                <input type="hidden" name="id-update">
                 <label for="email">Email:</label>
-                <input type="email" name="email" required>
+                <input type="email" name="email-update" disabled>
                 <label for="password">Hasło:</label>
                 <input type="password" name="password" minlength="8" required>
                 <label for="role">Rola:</label>
@@ -82,6 +82,17 @@ if (!($_SESSION['signed_in'] == true && $_SESSION['admin'] == true)) {
                     <option value="0">Nie</option>
                 </select>
                 <button type="submit" name="update">Aktualizuj użytkownika</button>
+                <button type="button" class="close-modal">Zamknij</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-delete" class="modal-wrapper">
+        <div class="modal">
+            <form action="../backend_logic/users_crud.php" method="POST" class="delete-user">
+                <input type="hidden" name="id-delete">
+                <label for="email">Email:</label>
+                <input type="email" name="email-delete" disabled>
+                <button type="submit" name="delete">Usuń użytkownika</button>
                 <button type="button" class="close-modal">Zamknij</button>
             </form>
         </div>

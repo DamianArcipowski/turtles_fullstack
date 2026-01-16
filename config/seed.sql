@@ -22,5 +22,7 @@ INSERT INTO traits (trait, description) VALUES ('Waga', '0,5-1 kg');
 INSERT INTO traits (trait, description) VALUES ('Dieta', 'owady, małe ryby, rośliny wodne');
 INSERT INTO traits (trait, description) VALUES ('Siedlisko', 'stawy, jeziora, rzeki z roślinnością');
 
+INSERT INTO users (email, password, role) VALUES ('admin@mail.pl', '$2y$10$TKJkc9mxkX/CB4Zkk.jzBeDVfnVOKFFmqvQLB3MY9K.SqYCpBaOFG', 'admin');
+
 CREATE USER turtle IDENTIFIED BY 'zaq1@WSX';
 GRANT ALL PRIVILEGES ON turtles_prod.* TO 'turtle'@'%';

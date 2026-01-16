@@ -24,15 +24,14 @@ if (isset($_POST['create'])) {
 }
 
 if (isset($_POST['update'])) {
-    $id = intval($_POST['id']);
-    $email = $_POST['email'];
+    $id = intval($_POST['id-update']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $role = $_POST['role'];
     $active = $_POST['active'];
 
     try {
-        $stmt = $conn->prepare('UPDATE users SET email = ?, password = ?, role = ?, is_active = ? WHERE id = ?');
-        $stmt->bind_param('sssii', $email, $password, $role, $is_active, $id);
+        $stmt = $conn->prepare('UPDATE users SET password = ?, role = ?, is_active = ? WHERE id = ?');
+        $stmt->bind_param('ssii', $password, $role, $is_active, $id);
         $stmt->execute();
         $stmt->close();
         $conn->close();
@@ -42,6 +41,25 @@ if (isset($_POST['update'])) {
     }
 
     header('Location: ../subpages/panel.php?action=update');
+    exit(); 
+}
+
+if (isset($_POST['delete'])) {
+    $id = intval($_POST['id-delete']);
+
+    try {
+        error_log($id);
+        $stmt = $conn->prepare('DELETE FROM users WHERE id = ?');
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+        $stmt->close();
+        $conn->close();
+    } catch (mysqli_sql_exception $e) {
+        header('Location: ../subpages/panel.php?error=delete');
+        exit();
+    }
+
+    header('Location: ../subpages/panel.php?action=delete');
     exit(); 
 }
 

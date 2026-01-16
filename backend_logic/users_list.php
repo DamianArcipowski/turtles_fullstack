@@ -13,8 +13,8 @@ while ($row = $result->fetch_assoc()) {
             <td>{$row['role']}</td>
             <td>{$status}</td>
             <td>
-                <a onclick="openModal({$row['id']})">Edytuj</a> |
-                <a onclick="openModal({$row['id']})">Usuń</a>
+                <a onclick="openModal({$row['id']}, '{$row['email']}', 'update')">Edytuj</a> |
+                <a onclick="openModal({$row['id']}, '{$row['email']}', 'delete')">Usuń</a>
             </td>
         </tr>
     HTML;
