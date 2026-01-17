@@ -1,0 +1,12 @@
+FROM nginx:latest
+
+WORKDIR /var/www/html
+
+COPY . .
+
+RUN mv /var/www/html/docker/default.conf /etc/nginx/conf.d/default.conf && \
+    rm -rf /var/www/html/docker/ && \
+    rm -rf /var/www/html/config/seed.sql && \
+    chmod -R 755 /var/www/html
+
+EXPOSE 8080
