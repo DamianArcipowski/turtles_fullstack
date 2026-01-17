@@ -1,8 +1,9 @@
 <?php
 
 session_start();
-if (!$_SESSION['signed_in'] == true) {
+if (!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] != true) {
     header('Location: ../index.php');
+    exit();
 }
 
 require_once('../backend_logic/organisation_info.php');

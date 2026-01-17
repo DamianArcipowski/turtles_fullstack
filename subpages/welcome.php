@@ -46,8 +46,6 @@
 </section>
 <section class="last-visit">
     <?php
-
-    session_start();
     
     if (isset($_SESSION['visit_counter'])) {
         $_SESSION['visit_counter']++;
@@ -65,7 +63,13 @@
         echo '<h4>Witaj po raz pierwszy na naszej stronie!</h4>';
     }
 
-    $ip = $_SERVER['REMOTE_ADDR'];
+    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ipList = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+        $ip = trim($ipList[0]);
+    } else {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+
     $json = file_get_contents("http://ip-api.com/json/$ip");
     $data = json_decode($json, true);
 

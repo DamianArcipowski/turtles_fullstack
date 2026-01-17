@@ -1,4 +1,8 @@
-CREATE DATABASE turtles_prod IF NOT EXISTS;
+SET NAMES 'utf8mb4';
+
+CREATE DATABASE IF NOT EXISTS turtles_prod
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_polish_ci;
 
 USE turtles_prod;
 
@@ -7,7 +11,7 @@ CREATE TABLE IF NOT EXISTS users (
     email varchar(255) NOT NULL UNIQUE,
     password varchar(255) NOT NULL,
     role varchar(10) NOT NULL DEFAULT 'user',
-    is_active boolean NOT NULL DEFAULT 1;
+    is_active boolean NOT NULL DEFAULT 1
 );
 
 CREATE TABLE IF NOT EXISTS traits (
@@ -17,7 +21,7 @@ CREATE TABLE IF NOT EXISTS traits (
 );
 
 CREATE TABLE IF NOT EXISTS employees (
-	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	id int PRIMARY KEY AUTO_INCREMENT,
     name varchar(50) NOT NULL,
     surname varchar(50) NOT NULL,
     sex enum('K', 'M') NOT NULL,
@@ -30,12 +34,12 @@ CREATE TABLE IF NOT EXISTS employees (
 );
 
 CREATE TABLE IF NOT EXISTS discount_codes (
-	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id int PRIMARY KEY AUTO_INCREMENT,
     code varchar(20) NOT NULL
 ); 
 
 CREATE TABLE IF NOT EXISTS organisation (
-	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id int PRIMARY KEY AUTO_INCREMENT,
     info varchar(255) NOT NULL
 );
 
@@ -54,6 +58,3 @@ INSERT INTO traits (trait, description) VALUES ('Dieta', 'owady, małe ryby, ro�
 INSERT INTO traits (trait, description) VALUES ('Siedlisko', 'stawy, jeziora, rzeki z roślinnością');
 
 INSERT INTO users (email, password, role) VALUES ('admin@mail.pl', '$2y$10$TKJkc9mxkX/CB4Zkk.jzBeDVfnVOKFFmqvQLB3MY9K.SqYCpBaOFG', 'admin');
-
-CREATE USER turtle IDENTIFIED BY 'zaq1@WSX';
-GRANT ALL PRIVILEGES ON turtles_prod.* TO 'turtle'@'%';

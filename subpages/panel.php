@@ -1,8 +1,9 @@
 <?php
 
 session_start();
-if (!($_SESSION['signed_in'] == true && $_SESSION['admin'] == true)) {
+if (!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] != true || !isset($_SESSION['admin']) || $_SESSION['admin'] != true) {
     header('Location: ../index.php');
+    exit();
 }
 
 ?>
