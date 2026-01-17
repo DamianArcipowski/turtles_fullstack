@@ -22,7 +22,7 @@
             <th>Opis</th>
         </tr>
         <?php
-        require_once '../turtles_fullstack/backend_logic/traits.php';
+        require_once './backend_logic/traits.php';
         ?>
     </table>
 </div>

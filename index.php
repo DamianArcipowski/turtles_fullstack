@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $lifetime = time() + 30 * 24 * 60 * 60;
     setcookie('visit', date('Y-m-d H:i:s (P)'), $lifetime);
 ?>

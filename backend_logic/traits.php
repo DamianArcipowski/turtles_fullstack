@@ -1,6 +1,6 @@
 <?php
 
-require_once '../turtles_fullstack/config/database.php';
+require_once './config/database.php';
 
 $sql = 'SELECT trait, description FROM traits';
 $stmt = $conn->prepare($sql);
